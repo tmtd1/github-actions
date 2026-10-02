@@ -9,5 +9,8 @@ jobs:
             - name: checkout repo
               uses: actions/checkout@v7
 
-            - name: display dragon
+            - name: list files
+              run: ls -ltra
+
+            - name: execute shell script
               run: ./ascii-script.sh
