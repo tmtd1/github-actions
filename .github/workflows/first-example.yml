@@ -14,5 +14,5 @@ jobs:
                echo "My first Github Actions Job"
                ls
                cat README.md
-        - name: display a dragon
-          run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR"
+        # - name: display a dragon
+        #   run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR"
