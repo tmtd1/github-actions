@@ -18,6 +18,11 @@ jobs:
             - name: sleep for 30 seconds
               run: sleep 30
 
+            - uses: actions/upload-artifact@v7
+              with:
+                name: dragon-text-artifact
+                path: dragon.txt
+
             # - name: check weather file exist
             #   run: grep -i "dragon" dragon.txt
 
@@ -31,16 +36,24 @@ jobs:
         needs: first_job
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/download-artifact@v8
+              with:
+                name: dragon-text-artifact
+
             - name: sleep for 10 seconds
               run: sleep 10
 
             - name: check weather file exist
-              run: grep -i "dragon" dragon.txtt
+              run: grep -i "dragon" dragon.txt
 
     third_job:
         needs: [second_job]
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/download-artifact@v8
+              with:
+                name: dragon-text-artifact
+                
             - name: read file
               run: cat dragon.txt
 
