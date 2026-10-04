@@ -36,6 +36,9 @@ jobs:
               run: |
                 echo "Docker Password: ${{secrets.DOCKER_PASSWORD}}"
 
+            - name: use vars
+              run: echo docker username is ${{vars.DOCKER_USERNAME}}
+
             # - name: check weather file exist
             #   run: grep -i "dragon" dragon.txt
 
