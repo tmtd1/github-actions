@@ -32,6 +32,10 @@ jobs:
                 echo "My App: $app_name"
                 echo "My App: ${{env.app_name}}"
             
+            - name: use secrets 
+              run: |
+                echo "Docker Password: ${{secrets.DOCKER_PASSWORD}}"
+
             # - name: check weather file exist
             #   run: grep -i "dragon" dragon.txt
 
