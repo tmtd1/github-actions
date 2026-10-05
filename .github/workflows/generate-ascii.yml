@@ -56,7 +56,7 @@ jobs:
         runs-on: ubuntu-latest
         concurrency: 
           group: deployment
-          cancel-in-progress: true
+          cancel-in-progress: false
         env:
             node_version: node 22
         steps:
