@@ -66,8 +66,8 @@ jobs:
               with:
                 name: dragon-text-artifact
 
-            - name: sleep for 600 seconds
-              run: sleep 600
+            - name: sleep for 6 seconds
+              run: sleep 6
 
             - name: check weather file exist
               run: grep -i "dragon" dragon.txt
