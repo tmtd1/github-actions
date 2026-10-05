@@ -1,6 +1,8 @@
 name: Generate ASCII
 
-on: push
+on: 
+  schedule:
+    - cron: '* * * * *'
 
 env:
     app_name: My-App
@@ -18,8 +20,8 @@ jobs:
             - name: display a dragon
               run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
 
-            - name: sleep for 30 seconds
-              run: sleep 30
+            - name: sleep for 3 seconds
+              run: sleep 3
 
             - name: upload dragon text file
               uses: actions/upload-artifact@v7
@@ -59,8 +61,8 @@ jobs:
               with:
                 name: dragon-text-artifact
 
-            - name: sleep for 10 seconds
-              run: sleep 10
+            - name: sleep for 1 seconds
+              run: sleep 1
 
             - name: check weather file exist
               run: grep -i "dragon" dragon.txt
