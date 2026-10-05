@@ -54,6 +54,9 @@ jobs:
     second_job:
         needs: first_job
         runs-on: ubuntu-latest
+        concurrency: 
+          group: deployment
+          cancel-in-progress: true
         env:
             node_version: node 22
         steps:
@@ -62,8 +65,8 @@ jobs:
               with:
                 name: dragon-text-artifact
 
-            - name: sleep for 1 seconds
-              run: sleep 1
+            - name: sleep for 60 seconds
+              run: sleep 60
 
             - name: check weather file exist
               run: grep -i "dragon" dragon.txt
