@@ -1,6 +1,7 @@
 name: Generate ASCII
 
 on: 
+  workflow_dispatch: 
   schedule:
     - cron: '* * * * *'
 
