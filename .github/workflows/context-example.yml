@@ -1,0 +1,11 @@
+name: context-example
+
+on:
+    push
+
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: github context
+              run: echo ${{github}}
