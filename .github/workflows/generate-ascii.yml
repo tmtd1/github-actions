@@ -7,15 +7,15 @@ on:
       - opened
       - closed
 
-    paths-ignore: 
-      - README.md
+    # paths-ignore: 
+    #   - README.md
   push: 
     branches:
       - main
       - '!feature/'
     
-    paths-ignore: 
-      - README.md
+    # paths-ignore: 
+    #   - README.md
   # schedule:
   #   - cron: '* * * * *'
 
